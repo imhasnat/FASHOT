@@ -45,7 +45,7 @@ const Navbar = () => {
                                 Blog
                             </Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link
                                 to="/faq"
                                 aria-label="Product pricing"
@@ -54,7 +54,7 @@ const Navbar = () => {
                             >
                                 FAQ
                             </Link>
-                        </li>
+                        </li> */}
                         <li className='flex items-center'>
                             <button
                                 onClick={toggle}
@@ -107,16 +107,39 @@ const Navbar = () => {
 
                         {
                             user?.uid ?
-                                <li>
-                                    <Link
-                                        onClick={logOut}
-                                        aria-label="About us"
-                                        title="logout"
-                                        className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-                                    >
-                                        Logout
-                                    </Link>
-                                </li>
+                                <>
+                                    <li>
+                                        <Link
+                                            onClick={logOut}
+                                            aria-label="About us"
+                                            title="logout"
+                                            className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                                        >
+                                            Logout
+                                        </Link>
+
+                                    </li>
+                                    <li>
+                                        <Link
+                                            to="/myReview"
+                                            aria-label="Product pricing"
+                                            title="Product pricing"
+                                            className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                                        >
+                                            My Review
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                            to="/addService"
+                                            aria-label="Product pricing"
+                                            title="Product pricing"
+                                            className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                                        >
+                                            Add Service
+                                        </Link>
+                                    </li>
+                                </>
                                 :
                                 <>
                                     <li>

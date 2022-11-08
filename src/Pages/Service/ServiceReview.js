@@ -2,8 +2,7 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const ServiceReview = ({ id }) => {
-    const { user } = useContext(AuthContext);
-    //console.log(user.email);
+    const { user, updateData, setUpdateData } = useContext(AuthContext);
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -31,6 +30,7 @@ const ServiceReview = ({ id }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                setUpdateData(!updateData)
             })
             .catch(err => console.log(err.message))
     }

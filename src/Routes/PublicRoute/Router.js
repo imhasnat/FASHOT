@@ -4,6 +4,7 @@ import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
+import MyReview from "../../Pages/My Review/MyReview";
 import AllServices from "../../Pages/Service/AllServices";
 import DetailService from "../../Pages/Service/DetailService";
 
@@ -24,9 +25,13 @@ export const router = createBrowserRouter([
                 loader: async () => fetch('http://localhost:5000/services')
             },
             {
-                path: '//detailservice/:id',
+                path: '/detailservice/:id',
                 element: <DetailService></DetailService>,
                 loader: async ({ params }) => fetch(`http://localhost:5000/detailservice/${params.id}`)
+            },
+            {
+                path: '/myReview',
+                element: <MyReview></MyReview>
             },
             {
                 path: '/login',
