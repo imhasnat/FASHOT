@@ -9,9 +9,13 @@ const ServiceReview = ({ id }) => {
         event.preventDefault();
         const comment = event.target.review.value;
         const email = user?.email || 'Unregister';
+        const name = user?.displayName || 'Not found';
+        const img = user?.photoURL || 'Not found';
         const time = new Date();
         const review = {
             service: id,
+            name,
+            img,
             email,
             comment,
             time

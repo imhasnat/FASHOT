@@ -15,7 +15,7 @@ const DetailService = () => {
             </div>
 
             {/* All Reviews about the Service */}
-            <div className='w-9/12 mx-auto my-10'>
+            <div className='my-10'>
                 <CommetOfService id={_id}></CommetOfService>
             </div>
 
