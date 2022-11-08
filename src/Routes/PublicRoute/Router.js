@@ -4,6 +4,7 @@ import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
+import AllServices from "../../Pages/Service/AllServices";
 
 export const router = createBrowserRouter([
     {
@@ -14,10 +15,12 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
+                loader: async () => fetch('http://localhost:5000/limitservices')
             },
             {
-                path: '/home',
-                element: <Home></Home>,
+                path: '/services',
+                element: <AllServices></AllServices>,
+                loader: async () => fetch('http://localhost:5000/services')
             },
             {
                 path: '/login',

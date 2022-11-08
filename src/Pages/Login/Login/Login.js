@@ -1,8 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import { GoogleAuthProvider } from 'firebase/auth';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
@@ -38,8 +37,6 @@ const Login = () => {
     }
 
     const googleProvider = new GoogleAuthProvider();
-    const githubProvider = new GithubAuthProvider()
-
     const handleGoogleSignIn = () => {
         popupLogin(googleProvider)
             .then(result => {
