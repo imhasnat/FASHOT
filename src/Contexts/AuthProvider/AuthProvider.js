@@ -51,6 +51,9 @@ const AuthProvider = ({ children }) => {
         return signInWithPopup(auth, provider);
     }
 
+    if (loading) {
+        return <progress className=" mx-auto flex my-48 justify-center progress progress-error w-56"></progress>
+    }
 
     const value = {
         user,
