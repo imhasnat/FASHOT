@@ -4,17 +4,17 @@ import ReviewCard from './ReviewCard';
 
 const MyReview = () => {
     const [reviews, setReviews] = useState([]);
-    const { user } = useContext(AuthContext);
+    const { user, updateData } = useContext(AuthContext);
 
     useEffect(() => {
         fetch(`http://localhost:5000/myreview/${user?.email}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 setReviews(data);
             })
             .catch(err => console.log(err.message))
-    }, [user?.email])
+    }, [user?.email, updateData])
     return (
         <div>
             {

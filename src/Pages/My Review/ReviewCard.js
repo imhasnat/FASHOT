@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const ReviewCard = ({ review }) => {
-    const { _id, comment } = review
+    const { _id, comment } = review;
+    const { updateData, setUpdateData } = useContext(AuthContext);
 
     const handleDelete = id => {
-
+        fetch(`http://localhost:5000/deletereview/${id}`, {
+            method: 'DELETE',
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setUpdateData(!updateData);
+            })
+            .catch(err => console.log(err.message))
     }
 
     return (
