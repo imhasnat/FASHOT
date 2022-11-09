@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ServiceReview = ({ id, title }) => {
     const { user, updateData, setUpdateData } = useContext(AuthContext);
@@ -30,8 +32,12 @@ const ServiceReview = ({ id, title }) => {
         })
             .then(res => res.json())
             .then(data => {
-                //console.log(data);
-                setUpdateData(!updateData);
+                if (data.acknowledged) {
+                    setUpdateData(!updateData);
+                    toast.success('Review Posted Successfully', {
+                        position: toast.POSITION.TOP_CENTER, autoClose: 500
+                    });
+                }
                 event.target.reset();
             })
             .catch(err => console.log(err.message))

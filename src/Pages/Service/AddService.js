@@ -1,6 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddService = () => {
+    const navigate = useNavigate()
+
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
@@ -8,15 +13,14 @@ const AddService = () => {
         const photourl = form.url.value;
         const price = form.price.value;
         const description = form.description.value;
-        const rating = form.rating.value;
-        console.log(title, photourl, price, rating, description);
+        // const rating = form.rating.value;
+        console.log(title, photourl, price, description);
 
         const service = {
             title,
             photourl,
             description,
-            price,
-            rating
+            price
         }
 
         fetch('http://localhost:5000/addservice', {
@@ -28,7 +32,13 @@ const AddService = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                if (data.acknowledged) {
+                    form.reset();
+                    toast.success('Service Added Successfully', {
+                        position: toast.POSITION.TOP_CENTER, autoClose: 500
+                    });
+                    navigate('/services');
+                }
             })
             .catch(err => console.log(err.message))
     }

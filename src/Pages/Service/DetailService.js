@@ -9,7 +9,6 @@ const DetailService = () => {
     const detailService = useLoaderData();
     const { user } = useContext(AuthContext);
     const { _id, title } = detailService[0];
-    console.log(title);
     return (
         <div>
             {/* Service Detail Section */}

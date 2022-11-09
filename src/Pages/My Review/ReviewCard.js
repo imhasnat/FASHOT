@@ -34,7 +34,6 @@ const ReviewCard = ({ review }) => {
     const handleSubmit = event => {
         event.preventDefault();
         event.target.reset();
-        console.log(updateComment, clickId);
 
         if (updateComment) {
             fetch(`http://localhost:5000/updatereview/${clickId}`, {

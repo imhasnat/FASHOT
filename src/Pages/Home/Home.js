@@ -1,10 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import ServiceCard from '../Service/ServiceCard';
 import Banner from './Banner';
 
 const Home = () => {
-    const services = useLoaderData();
+    //const services = useLoaderData();
+    const [services, setServices] = useState([]);
+    const [spinner, setSpinner] = useState(true);
+
+    useEffect(() => {
+        setSpinner(true);
+        fetch('http://localhost:5000/limitservices')
+            .then(res => res.json())
+            .then(data => {
+                //console.log(data);
+                setServices(data);
+                setSpinner(false);
+            })
+            .catch(err => {
+                console.log(err.message);
+                setSpinner(false);
+            })
+    }, [])
+
+    if (spinner) {
+        return <progress className=" mx-auto flex my-48 justify-center progress progress-warning w-56"></progress>
+    }
+
     return (
         <div>
             <Banner></Banner>
