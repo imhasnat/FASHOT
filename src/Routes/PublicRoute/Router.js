@@ -8,6 +8,7 @@ import MyReview from "../../Pages/My Review/MyReview";
 import AddService from "../../Pages/Service/AddService";
 import AllServices from "../../Pages/Service/AllServices";
 import DetailService from "../../Pages/Service/DetailService";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -37,7 +38,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/myreview',
-                element: <MyReview></MyReview>
+                element: <PrivateRoute><MyReview></MyReview></PrivateRoute>
             },
             {
                 path: '/addservice',

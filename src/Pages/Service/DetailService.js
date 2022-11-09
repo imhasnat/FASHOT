@@ -8,7 +8,7 @@ import ServiceReview from './ServiceReview';
 const DetailService = () => {
     const detailService = useLoaderData();
     const { user } = useContext(AuthContext)
-    const { _id, title, description } = detailService[0]
+    const { _id } = detailService[0]
     return (
         <div>
             {/* Service Detail Section */}
@@ -36,7 +36,6 @@ const DetailService = () => {
                             <h1 className='text-center'>Please <Link className='text-primary' to={'/login'}> <button>Login</button> </Link> To Add a Review</h1>
                         </div>
                     </>
-
             }
         </div>
     );

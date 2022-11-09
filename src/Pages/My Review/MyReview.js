@@ -10,7 +10,6 @@ const MyReview = () => {
         fetch(`http://localhost:5000/myreview/${user?.email}`)
             .then(res => res.json())
             .then(data => {
-                // console.log(data);
                 setReviews(data);
             })
             .catch(err => console.log(err.message))
