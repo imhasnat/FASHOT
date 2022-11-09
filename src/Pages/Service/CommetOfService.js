@@ -7,7 +7,7 @@ const CommetOfService = ({ id }) => {
     const [reviews, setReviews] = useState([]);
     //console.log(reviews);
     const [spinner, setSpinner] = useState(true);
-    console.log(spinner);
+    //console.log(spinner);
 
     useEffect(() => {
         setSpinner(true);
