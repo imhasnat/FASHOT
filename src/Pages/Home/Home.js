@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import ServiceCard from '../Service/ServiceCard';
+import Banner from './Banner';
 
 const Home = () => {
     const services = useLoaderData();
     return (
         <div>
-            <h1>Banner</h1>
+            <Banner></Banner>
             <div className='mx-auto w-4/12 md:w-10/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
                 {
                     services.map(service =>
