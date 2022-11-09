@@ -13,9 +13,12 @@ const CommetOfService = ({ id }) => {
             .then(res => res.json())
             .then(data => {
                 setReviews(data);
-                setSpinner(false)
+                setSpinner(false);
             })
-            .catch(err => console.log(err.message))
+            .catch(err => {
+                console.log(err.message);
+                setSpinner(false);
+            })
     }, [id, updateData])
 
     if (spinner) {

@@ -24,6 +24,7 @@ const ServiceCard = ({ service }) => {
                             description
                     }
                 </p>
+                <p><span className='font-semibold'>Price:</span> {price}</p>
                 <div className="card-actions justify-end">
                     <Link to={`/detailservice/${_id}`}><button className="btn btn-primary">View Details</button></Link>
                 </div>

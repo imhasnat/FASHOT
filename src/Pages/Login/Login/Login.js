@@ -55,8 +55,8 @@ const Login = () => {
     }
 
     return (
-        <div className='flex justify-center items-center pt-8 mb-20'>
-            <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
+        <div className='flex justify-center items-center pt-8 bg-base-200 py-24'>
+            <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-base-100 text-gray-900'>
                 <div className='mb-2 text-center'>
                     <h1 className='my-3 text-4xl font-bold'>Sign in</h1>
                     <p className='text-sm text-gray-400'>
@@ -94,7 +94,7 @@ const Login = () => {
                                 id='email'
                                 required
                                 placeholder='Enter Your Email Here'
-                                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-200 text-gray-900'
+                                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-100 text-gray-900'
                                 data-temp-mail-org='0'
                             />
                         </div>
@@ -110,7 +110,7 @@ const Login = () => {
                                 id='password'
                                 required
                                 placeholder='Enter Your Password'
-                                className='w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-200 focus:border-gray-900 text-gray-900'
+                                className='w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-100 focus:border-gray-900 text-gray-900'
                             />
                         </div>
                     </div>

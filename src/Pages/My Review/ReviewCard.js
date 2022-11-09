@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import { FaTrashAlt, FaEdit } from "react-icons/fa";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ReviewCard = ({ review }) => {
     const { _id, comment, title } = review;
@@ -14,8 +16,12 @@ const ReviewCard = ({ review }) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
-                setUpdateData(!updateData);
+                if (data.deletedCount > 0) {
+                    setUpdateData(!updateData);
+                    toast.success('Review Deleted Successfully', {
+                        position: toast.POSITION.TOP_CENTER, autoClose: 650
+                    });
+                }
             })
             .catch(err => console.log(err.message))
     }
@@ -40,8 +46,12 @@ const ReviewCard = ({ review }) => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
-                    setUpdateData(!updateData);
+                    if (data.modifiedCount > 0) {
+                        setUpdateData(!updateData);
+                        toast.success('Review Updated Successfully', {
+                            position: toast.POSITION.TOP_CENTER, autoClose: 650
+                        });
+                    }
                 })
                 .catch(err => console.log(err.message))
         }
@@ -53,7 +63,7 @@ const ReviewCard = ({ review }) => {
     }
 
     return (
-        <div className='my-7'>
+        <div className='my-7 overflow-hidden'>
             <div className="container flex flex-col w-full p-6 mx-auto divide-y rounded-md divide-gray-700 bg-gray-100 text-gray-900 ">
                 <div className="flex justify-between p-4">
                     <div className="flex justify-between w-full space-x-4">
@@ -67,7 +77,7 @@ const ReviewCard = ({ review }) => {
                     </div>
 
                 </div>
-                <div className="p-4 space-y-2 text-sm text-gray-400">
+                <div className="p-4 space-y-2 text-sm text-gray-600">
                     <p>{comment}</p>
                 </div>
             </div>

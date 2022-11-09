@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Detail = ({ detailService }) => {
-    const { _id, photourl, title, description } = detailService
+    const { photourl, title, description } = detailService
     return (
         <div>
             <div className="px-6 py-2 mx-auto space-y-12">
