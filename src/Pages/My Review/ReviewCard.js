@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+import { FaTrashAlt, FaEdit } from "react-icons/fa";
 
 const ReviewCard = ({ review }) => {
-    const { _id, comment } = review;
+    const { _id, comment, title } = review;
     const { updateData, setUpdateData } = useContext(AuthContext);
     const [updateComment, setUpdateComment] = useState('');
     const [clickId, setClickId] = useState(0);
@@ -52,7 +53,24 @@ const ReviewCard = ({ review }) => {
     }
 
     return (
-        <div>
+        <div className='my-7'>
+            <div className="container flex flex-col w-full p-6 mx-auto divide-y rounded-md divide-gray-700 bg-gray-100 text-gray-900 ">
+                <div className="flex justify-between p-4">
+                    <div className="flex justify-between w-full space-x-4">
+                        <div className=''>
+                            <h4 className="font-bold">{title}</h4>
+                        </div>
+                        <div className='flex items-center'>
+                            <label htmlFor={_id} className="mr-2 text-xl text-blue-500"><FaEdit></FaEdit></label>
+                            <button className='text-red-500 text-xl' onClick={() => handleDelete(_id)}><FaTrashAlt></FaTrashAlt></button>
+                        </div>
+                    </div>
+
+                </div>
+                <div className="p-4 space-y-2 text-sm text-gray-400">
+                    <p>{comment}</p>
+                </div>
+            </div>
             {/* Put this part before </body> tag */}
             <input type="checkbox" id={_id} className="modal-toggle" />
             <form onSubmit={handleSubmit} className="modal modal-bottom sm:modal-middle">
@@ -66,8 +84,6 @@ const ReviewCard = ({ review }) => {
                     </div>
                 </div>
             </form>
-
-            <p>{ } {comment} <label htmlFor={_id} className="btn">Update</label> <button className='btn' onClick={() => handleDelete(_id)}>delete</button> </p>
             <div>
                 {/* The button to open modal */}
             </div>

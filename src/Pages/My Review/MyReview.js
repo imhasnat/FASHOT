@@ -15,7 +15,7 @@ const MyReview = () => {
             .catch(err => console.log(err.message))
     }, [user?.email, updateData])
     return (
-        <div>
+        <div className='my-20 w-10/12 md:w-7/12 mx-auto'>
             {
                 reviews.length > 0 ?
                     <>
@@ -29,7 +29,7 @@ const MyReview = () => {
                     </>
                     :
                     <>
-                        <h1>You have to give review yet!</h1>
+                        <h1 className='text-4xl font-semibold text-center my-10'>You have to give a review yet!</h1>
                     </>
             }
         </div>

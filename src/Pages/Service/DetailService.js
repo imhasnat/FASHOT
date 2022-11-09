@@ -7,8 +7,9 @@ import ServiceReview from './ServiceReview';
 
 const DetailService = () => {
     const detailService = useLoaderData();
-    const { user } = useContext(AuthContext)
-    const { _id } = detailService[0]
+    const { user } = useContext(AuthContext);
+    const { _id, title } = detailService[0];
+    console.log(title);
     return (
         <div>
             {/* Service Detail Section */}
@@ -27,7 +28,7 @@ const DetailService = () => {
                 user?.uid ?
                     <>
                         <div className='text-center w-10/12 mx-auto my-10'>
-                            <ServiceReview id={_id}></ServiceReview>
+                            <ServiceReview id={_id} title={title}></ServiceReview>
                         </div>
                     </>
                     :

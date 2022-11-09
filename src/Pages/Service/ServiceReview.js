@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
-const ServiceReview = ({ id }) => {
+const ServiceReview = ({ id, title }) => {
     const { user, updateData, setUpdateData } = useContext(AuthContext);
 
     const handleSubmit = event => {
@@ -13,6 +13,7 @@ const ServiceReview = ({ id }) => {
         const time = new Date();
         const review = {
             service: id,
+            title,
             name,
             img,
             email,
@@ -39,7 +40,7 @@ const ServiceReview = ({ id }) => {
         <div className=''>
             <form onSubmit={handleSubmit}>
                 <textarea name='review' className="w-11/12 md:w-8/12 h-32 textarea textarea-primary" placeholder="Your review"></textarea> <br />
-                <button type='submit' className="btn btn-outline btn-primary w-3/12">Your REview</button>
+                <button type='submit' className="btn btn-outline btn-primary w-3/12">Your Review</button>
             </form>
         </div>
     );

@@ -19,7 +19,7 @@ const Home = () => {
                 }
             </div>
             <div className='flex justify-center my-10'>
-                <Link to={'/services'}><button className="btn btn-outline btn-primary">View All</button></Link>
+                <Link to={'/services'}><button className="btn btn-outline btn-primary w-44">View All</button></Link>
             </div>
         </div>
     );

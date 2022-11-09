@@ -33,10 +33,9 @@ const AddService = () => {
             .catch(err => console.log(err.message))
     }
 
-
     return (
-        <div className="hero bg-base-200">
-            <div className="hero-content flex-col w-5/12">
+        <div className="hero bg-base-200 py-16">
+            <div className="hero-content flex-col w-4/12">
                 <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100">
                     <form onSubmit={handleSubmit} className="card-body">
                         <div className="form-control">
@@ -56,12 +55,6 @@ const AddService = () => {
                                 <span className="label-text">Price</span>
                             </label>
                             <input type="text" name='price' placeholder="Price" className="input input-bordered" />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Rating</span>
-                            </label>
-                            <input type="text" name='rating' placeholder="rating" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
