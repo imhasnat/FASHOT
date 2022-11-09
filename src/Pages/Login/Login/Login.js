@@ -57,13 +57,13 @@ const Login = () => {
     }
 
     return (
-        <section className="w-11/12 md:w-9/12 mx-auto my-10 dark:text-gray-100 ">
+        <section className="w-full lg:w-9/12 mx-auto my-10 dark:text-gray-100 ">
             <div className="container flex flex-col justify-center items-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
                 <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
                     <img src={login} alt="" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
                 </div>
                 <div className='flex justify-center items-center'>
-                    <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
+                    <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 border border-indigo-800 shadow-lg text-gray-900'>
                         <div className='mb-2 text-center'>
                             <h1 className='my-3 text-4xl font-bold'>Sign in</h1>
                             <p className='text-sm text-gray-400'>
@@ -127,7 +127,7 @@ const Login = () => {
                             <div>
                                 <button
                                     type='submit'
-                                    className='w-full px-8 py-3 font-semibold rounded-md bg-gray-900 hover:bg-gray-700 hover:text-white text-gray-100'
+                                    className='w-full px-8 py-3 font-semibold rounded-md btn-primary text-gray-100'
                                 >
                                     Sign in
                                 </button>

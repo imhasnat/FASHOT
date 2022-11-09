@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 import useTitle from '../../../Hook/useTitle';
+import regi from '../../../assests/regi.jpg';
 
 const Register = () => {
     const { createUser, updateUserInfo, setLoading, setUser } = useContext(AuthContext);
@@ -60,91 +61,96 @@ const Register = () => {
     }
 
     return (
-        <div className='flex justify-center items-center py-16 bg-base-200'>
-            <div className='flex flex-col max-w-md p-2 rounded-md sm:p-10 bg-base-100 text-gray-900'>
-                <div className='mb-8 text-center'>
-                    <h1 className='my-3 text-4xl font-bold'>Register</h1>
-                    <p className='text-sm text-gray-400'>Create a new account</p>
+        <section className="w-full lg:w-9/12 mx-auto my-10 dark:text-gray-100 ">
+            <div className="container flex flex-col justify-center items-center p-6 mx-auto sm:py-12 lg:py-24 md:flex-row lg:justify-between">
+                <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+                    <img src={regi} alt="" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
                 </div>
-                <form
-                    onSubmit={handleRegister}
-                    noValidate=''
-                    action=''
-                    className='space-y-12 ng-untouched ng-pristine ng-valid'
-                >
-                    <div className='space-y-4'>
-                        <div>
-                            <label htmlFor='email' className='block mb-2 text-sm'>
-                                Full Name
-                            </label>
-                            <input
-                                type='text'
-                                name='name'
-                                id='name'
-                                placeholder='Enter Your Name Here'
-                                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-100 text-gray-900'
-                                data-temp-mail-org='0'
-                            />
+                <div className='flex justify-center items-center'>
+                    <div className='flex flex-col max-w-md p-6 rounded-md border border-indigo-800 shadow-lg  text-gray-900'>
+                        <div className='mb-8 text-center'>
+                            <h1 className='my-3 text-4xl font-bold'>Register</h1>
+                            <p className='text-sm text-gray-400'>Create a new account</p>
                         </div>
-                        <div>
-                            <label htmlFor='photoUrl' className='block mb-2 text-sm'>
-                                PhotoUrl
-                            </label>
-                            <input
-                                type='text'
-                                name='photoUrl'
-                                id='photoUrl'
-                                placeholder='Enter Your Photo Link Here'
-                                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-100 text-gray-900'
-                                data-temp-mail-org='0'
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor='email' className='block mb-2 text-sm'>
-                                Email address
-                            </label>
-                            <input
-                                type='email'
-                                name='email'
-                                id='email'
-                                required
-                                placeholder='Enter Your Email Here'
-                                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-100 text-gray-900'
-                                data-temp-mail-org='0'
-                            />
-                        </div>
-                        <div>
-                            <div className='flex justify-between mb-2'>
-                                <label htmlFor='password' className='text-sm'>
-                                    Password
-                                </label>
+                        <form
+                            onSubmit={handleRegister}
+                            noValidate=''
+                            action=''
+                            className='space-y-12 ng-untouched ng-pristine ng-valid'
+                        >
+                            <div className='space-y-4'>
+                                <div>
+                                    <label htmlFor='email' className='block mb-2 text-sm'>
+                                        Full Name
+                                    </label>
+                                    <input
+                                        type='text'
+                                        name='name'
+                                        id='name'
+                                        placeholder='Enter Your Name Here'
+                                        className='w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-100 text-gray-900'
+                                        data-temp-mail-org='0'
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor='photoUrl' className='block mb-2 text-sm'>
+                                        PhotoUrl
+                                    </label>
+                                    <input
+                                        type='text'
+                                        name='photoUrl'
+                                        id='photoUrl'
+                                        placeholder='Enter Your Photo Link Here'
+                                        className='w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-100 text-gray-900'
+                                        data-temp-mail-org='0'
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor='email' className='block mb-2 text-sm'>
+                                        Email address
+                                    </label>
+                                    <input
+                                        type='email'
+                                        name='email'
+                                        id='email'
+                                        required
+                                        placeholder='Enter Your Email Here'
+                                        className='w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-100 text-gray-900'
+                                        data-temp-mail-org='0'
+                                    />
+                                </div>
+                                <div>
+                                    <div className='flex justify-between mb-2'>
+                                        <label htmlFor='password' className='text-sm'>
+                                            Password
+                                        </label>
+                                    </div>
+                                    <input
+                                        type='password'
+                                        name='password'
+                                        id='password'
+                                        required
+                                        placeholder='Enter Your Password'
+                                        className='w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-100 focus:border-gray-900 text-gray-900'
+                                    />
+                                </div>
                             </div>
-                            <input
-                                type='password'
-                                name='password'
-                                id='password'
-                                required
-                                placeholder='Enter Your Password'
-                                className='w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-100 focus:border-gray-900 text-gray-900'
-                            />
-                        </div>
-                    </div>
 
-                    <div className='space-y-2'>
-                        <div>
-                            <button
-                                type='submit'
-                                className='w-full px-8 py-3 font-semibold rounded-md bg-gray-900 hover:bg-gray-700 hover:text-white text-gray-100'
-                            >
-                                Sign Up
-                            </button>
+                            <div className='space-y-2'>
+                                <div>
+                                    <button
+                                        type='submit'
+                                        className='w-full px-8 py-3 font-semibold rounded-md btn-primary text-gray-100'
+                                    >
+                                        Sign Up
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <div className='text-red-600'>
+                            {error}
                         </div>
-                    </div>
-                </form>
-                <div className='text-red-600'>
-                    {error}
-                </div>
-                {/* <div className='flex items-center pt-4 space-x-1'>
+                        {/* <div className='flex items-center pt-4 space-x-1'>
                     <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
                     <p className='px-3 text-sm dark:text-gray-400'>
                         Signup with social accounts
@@ -152,7 +158,7 @@ const Register = () => {
                     <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
                 </div> */}
 
-                {/* <div className='flex justify-center space-x-4'>
+                        {/* <div className='flex justify-center space-x-4'>
                     <button aria-label='Log in with Google' className='p-3 rounded-sm'>
                         <svg
                             xmlns='http://www.w3.org/2000/svg'
@@ -163,15 +169,17 @@ const Register = () => {
                         </svg>
                     </button>
                 </div> */}
-                <p className='px-6 mt-7 text-sm text-center text-gray-400'>
-                    Already have an account yet?{' '}
-                    <Link to='/login' className='hover:underline text-gray-600'>
-                        Sign In
-                    </Link>
-                    .
-                </p>
+                        <p className='px-6 mt-7 text-sm text-center text-gray-400'>
+                            Already have an account yet?{' '}
+                            <Link to='/login' className='hover:underline text-gray-600'>
+                                Sign In
+                            </Link>
+                            .
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     );
 };
 
