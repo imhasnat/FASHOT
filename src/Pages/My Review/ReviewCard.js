@@ -67,7 +67,7 @@ const ReviewCard = ({ review }) => {
                 </div>
             </form>
 
-            <p>{comment} <label htmlFor={_id} className="btn">Update</label> <button className='btn' onClick={() => handleDelete(_id)}>delete</button> </p>
+            <p>{ } {comment} <label htmlFor={_id} className="btn">Update</label> <button className='btn' onClick={() => handleDelete(_id)}>delete</button> </p>
             <div>
                 {/* The button to open modal */}
             </div>
