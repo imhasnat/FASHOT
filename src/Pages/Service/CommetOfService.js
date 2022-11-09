@@ -5,9 +5,7 @@ import Reviews from './Reviews';
 const CommetOfService = ({ id }) => {
     const { updateData } = useContext(AuthContext)
     const [reviews, setReviews] = useState([]);
-    //console.log(reviews);
     const [spinner, setSpinner] = useState(true);
-    //console.log(spinner);
 
     useEffect(() => {
         setSpinner(true);
@@ -25,7 +23,7 @@ const CommetOfService = ({ id }) => {
     }
 
     return (
-        <div className='w-9/12 grid grid-cols-2 gap-4 mx-auto'>
+        <div className='w-11/12 md:w-7/12 grid grid-cols-1 gap-4 mx-auto'>
             {
                 reviews.length > 0 ?
                     <>
@@ -40,7 +38,7 @@ const CommetOfService = ({ id }) => {
                     </>
                     :
                     <>
-                        <h1>No review added yet!</h1>
+                        <h1 className='text-4xl font-semibold text-center my-10'>No review added for this service!</h1>
                     </>
 
             }
