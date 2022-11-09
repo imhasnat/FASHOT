@@ -10,9 +10,7 @@ const Main = () => {
             <div className='page-container'>
                 <div className='content-wrapper'>
                     <Navbar></Navbar>
-                    <div className='my-8'>
-                        <Outlet></Outlet>
-                    </div>
+                    <Outlet></Outlet>
                 </div>
                 <Footer></Footer>
             </div>
