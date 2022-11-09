@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import useTitle from '../../Hook/useTitle';
 import ServiceCard from '../Service/ServiceCard';
 import Banner from './Banner';
 
@@ -7,6 +8,7 @@ const Home = () => {
     //const services = useLoaderData();
     const [services, setServices] = useState([]);
     const [spinner, setSpinner] = useState(true);
+    useTitle('Home');
 
     useEffect(() => {
         setSpinner(true);

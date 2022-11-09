@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../Hook/useTitle';
 import ServiceCard from './ServiceCard';
 
 const AllServices = () => {
     // const services = useLoaderData();
     const [services, setServices] = useState([]);
     const [spinner, setSpinner] = useState(true);
+    useTitle('All Services');
 
     useEffect(() => {
         setSpinner(true);

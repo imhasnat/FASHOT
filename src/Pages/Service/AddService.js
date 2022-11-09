@@ -2,9 +2,11 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from '../../Hook/useTitle';
 
 const AddService = () => {
     const navigate = useNavigate()
+    useTitle('Add Services');
 
     const handleSubmit = event => {
         event.preventDefault();

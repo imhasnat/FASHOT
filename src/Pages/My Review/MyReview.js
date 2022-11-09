@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+import useTitle from '../../Hook/useTitle';
 import ReviewCard from './ReviewCard';
 
 const MyReview = () => {
     const [reviews, setReviews] = useState([]);
     const { user, updateData } = useContext(AuthContext);
     const [spinner, setSpinner] = useState(true);
+    useTitle('My Review');
 
     useEffect(() => {
         setSpinner(true);

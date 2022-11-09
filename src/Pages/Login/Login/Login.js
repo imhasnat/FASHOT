@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import { GoogleAuthProvider } from 'firebase/auth';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
+import useTitle from '../../../Hook/useTitle';
 
 const Login = () => {
     const { logIn, setLoading, setUser, popupLogin } = useContext(AuthContext);
@@ -10,6 +11,7 @@ const Login = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const from = location?.state?.from?.pathname || '/';
+    useTitle('Login');
     // console.log(from);
     const handleLogin = event => {
         event.preventDefault();

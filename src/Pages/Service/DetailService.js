@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+import useTitle from '../../Hook/useTitle';
 import CommetOfService from './CommetOfService';
 import Detail from './Detail';
 import ServiceReview from './ServiceReview';
@@ -9,6 +10,8 @@ const DetailService = () => {
     const detailService = useLoaderData();
     const { user } = useContext(AuthContext);
     const { _id, title } = detailService[0];
+    useTitle('Service Details');
+
     return (
         <div>
             {/* Service Detail Section */}
