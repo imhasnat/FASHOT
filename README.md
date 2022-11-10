@@ -11,7 +11,8 @@ This is a CRUD mini-project based on the Photography service where potential cli
 - Users can review the services and also can view all reviews by users on my review page. This page only can be viewed if a user has the authority. 
 - As this is a mini project different types of authority power aren't added. So any login user will be able to add a new service.
 - Users can delete and update their reviews as they wish.
--There is pagination functionality on the all-services page 
+- There is pagination functionality on the all-services page.
+- Clicking on Service card image make it full screen. 
 
 
 ### Technologies used: React Js, Express Js, MongoDB, JWT,Tailwind, Daisy UI, Firebase, Vercel.

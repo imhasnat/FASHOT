@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ServiceCard from './ServiceCard';
 
+// Load all the service form the database
 const LoadAllService = ({ setCount, currentPage, limit }) => {
     const [services, setServices] = useState([]);
     const [spinner, setSpinner] = useState(true);

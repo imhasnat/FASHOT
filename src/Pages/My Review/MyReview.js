@@ -39,6 +39,8 @@ const MyReview = () => {
     return (
         <div className='my-20 w-10/12 md:w-7/12 mx-auto'>
             {
+                // Conditional redering for checking whether is login or not
+                // If login then he will able to post review otherwise have to login to post review
                 reviews.length > 0 ?
                     <>
                         <div>

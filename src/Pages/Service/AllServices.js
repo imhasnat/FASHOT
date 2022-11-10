@@ -18,12 +18,15 @@ const AllServices = () => {
 
     return (
         <div className='my-20'>
+            {/* All services from the database load in this component */}
             <LoadAllService
                 count={count}
                 setCount={setCount}
                 limit={limit}
                 currentPage={currentPage}
             ></LoadAllService>
+
+            {/* Pagination */}
             <ReactPaginate
                 previousLabel={"previous"}
                 nextLabel={"next"}

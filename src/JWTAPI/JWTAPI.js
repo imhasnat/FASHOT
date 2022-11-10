@@ -1,3 +1,4 @@
+// fetching JWT token to authorize the user
 export function JWTAPI(currentUser) {
     fetch('https://service-review-server-tawny.vercel.app/jwt', {
         method: 'POST',

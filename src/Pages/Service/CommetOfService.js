@@ -28,6 +28,7 @@ const CommetOfService = ({ id }) => {
     return (
         <div className='w-11/12 md:w-7/12 grid grid-cols-1 gap-4 mx-auto'>
             {
+                // Conditional checking whether any review given or not
                 reviews.length > 0 ?
                     <>
                         {

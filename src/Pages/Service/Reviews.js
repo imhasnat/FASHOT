@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Review card of the user
 const Reviews = ({ review }) => {
     const { comment, name, img, time } = review;
     //console.log(time);

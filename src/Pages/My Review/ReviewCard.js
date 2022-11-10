@@ -81,7 +81,8 @@ const ReviewCard = ({ review }) => {
                     <p>{comment}</p>
                 </div>
             </div>
-            {/* Put this part before </body> tag */}
+
+            {/* Update review modal */}
             <input type="checkbox" id={_id} className="modal-toggle" />
             <form onSubmit={handleSubmit} className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box relative">
@@ -94,9 +95,6 @@ const ReviewCard = ({ review }) => {
                     </div>
                 </div>
             </form>
-            <div>
-                {/* The button to open modal */}
-            </div>
         </div>
     );
 };

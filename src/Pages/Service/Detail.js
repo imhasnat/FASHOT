@@ -1,5 +1,7 @@
 import React from 'react';
 
+
+// Detail page of each service
 const Detail = ({ detailService }) => {
     const { photourl, title, description, price } = detailService
     return (
