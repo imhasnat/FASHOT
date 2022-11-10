@@ -19,7 +19,6 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
 
         logIn(email, password)
             .then(result => {
@@ -39,7 +38,6 @@ const Login = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
                         localStorage.setItem('token', data.token);
                         navigate(from, { replace: true });
                     })
@@ -67,9 +65,10 @@ const Login = () => {
             })
             .catch(error => {
                 setError(error.message);
+                setLoading(false);
             })
             .finally(() => {
-                setLoading(false)
+                setLoading(false);
             })
     }
 

@@ -5,14 +5,23 @@ import ReviewCard from './ReviewCard';
 
 const MyReview = () => {
     const [reviews, setReviews] = useState([]);
-    const { user, updateData } = useContext(AuthContext);
+    const { user, updateData, logOut } = useContext(AuthContext);
     const [spinner, setSpinner] = useState(true);
     useTitle('My Review');
 
     useEffect(() => {
         setSpinner(true);
-        fetch(`http://localhost:5000/myreview/${user?.email}`)
-            .then(res => res.json())
+        fetch(`http://localhost:5000/myreview?email=${user?.email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        })
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    return logOut();
+                }
+                return res.json()
+            })
             .then(data => {
                 setReviews(data);
                 setSpinner(false);
@@ -21,7 +30,7 @@ const MyReview = () => {
                 console.log(err.message);
                 setSpinner(false);
             })
-    }, [user?.email, updateData])
+    }, [user?.email, updateData, logOut])
 
     if (spinner) {
         return <progress className=" mx-auto flex my-48 justify-center progress progress-warning w-56"></progress>
