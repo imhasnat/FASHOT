@@ -34,7 +34,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <h1 className='mb-12 text-4xl font-bold leading-none text-center sm:text-5xl text-indigo-800'>My Services</h1>
+            <h1 className='mb-12 text-4xl font-bold leading-none text-center sm:text-5xl text-indigo-800 dark:text-gray-100'>My Services</h1>
             <div className='sm:w-10/12 md:w-11/12 mx-auto grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center'>
                 {
                     services.map(service =>

@@ -11,8 +11,8 @@ const NewsLetter = () => {
                 <div className='flex justify-center items-center'>
                     <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 shadow-2xl text-gray-900'>
                         <div className='my-3'>
-                            <p>Keep up to date with my blog posts, and anything else I'm working on, as well as gain access to newsletter exclusive content.
-
+                            <p className='dark:text-gray-100'>Keep up to date with my blog posts, and anything else I'm working on, as well as gain access to newsletter exclusive content.
+                                <br />
                                 No spam, unsubscribe at any time.</p>
                         </div>
                         <form
@@ -24,7 +24,6 @@ const NewsLetter = () => {
                             <div className='space-y-4'>
                                 <div>
                                     <label htmlFor='email' className='block mb-2 text-sm'>
-                                        Email address
                                     </label>
                                     <input
                                         type='email'

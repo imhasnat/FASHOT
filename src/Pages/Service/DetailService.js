@@ -36,7 +36,7 @@ const DetailService = () => {
                     :
                     <>
                         <div className='my-10'>
-                            <h1 className='text-center'>Please <Link className='text-primary' to={'/login'}> <button className='hover:underline'>Login</button> </Link> To Add a Review</h1>
+                            <h1 className='text-center text-4xl font-bold'>Please <Link className='text-primary' to={'/login'}> <button className='hover:underline'>Login</button> </Link> To Add a Review</h1>
                         </div>
                     </>
             }

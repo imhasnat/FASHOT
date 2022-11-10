@@ -7,7 +7,7 @@ const LoadAllService = ({ setCount, currentPage, limit }) => {
 
     useEffect(() => {
         setSpinner(true);
-        const url = `http://localhost:5000/services?page=${currentPage}&size=${limit}`;
+        const url = `https://service-review-server-tawny.vercel.app/services?page=${currentPage}&size=${limit}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {

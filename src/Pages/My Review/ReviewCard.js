@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const ReviewCard = ({ review }) => {
-    const { _id, comment, title } = review;
+    const { _id, comment, title, time } = review;
     const { updateData, setUpdateData } = useContext(AuthContext);
     const [updateComment, setUpdateComment] = useState('');
     const [clickId, setClickId] = useState(0);
@@ -68,6 +68,7 @@ const ReviewCard = ({ review }) => {
                     <div className="flex justify-between w-full space-x-4">
                         <div className=''>
                             <h4 className="font-bold">{title}</h4>
+                            <span className="text-xs text-gray-600"><span className='font-bold'>Time:</span> {time.slice(11, 19)} <span className='font-bold'>Date:</span> {time.slice(0, 10)}</span>
                         </div>
                         <div className='flex items-center'>
                             <label htmlFor={_id} className="mr-2 text-xl text-blue-500"><FaEdit></FaEdit></label>
