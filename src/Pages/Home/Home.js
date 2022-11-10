@@ -4,6 +4,7 @@ import useTitle from '../../Hook/useTitle';
 import ServiceCard from '../Service/ServiceCard';
 import Banner from './Banner';
 import FAQ from './FAQ';
+import NewsLetter from './NewsLetter';
 
 const Home = () => {
     //const services = useLoaderData();
@@ -43,11 +44,14 @@ const Home = () => {
                         ></ServiceCard>)
                 }
             </div>
-            <div className='flex justify-center my-10'>
+            <div className='flex justify-center my-14'>
                 <Link to={'/services'}><button className="btn btn-outline btn-primary w-44">View All</button></Link>
             </div>
-            <div className='my-16'>
+            <div className='my-20'>
                 <FAQ></FAQ>
+            </div>
+            <div className='mb-10'>
+                <NewsLetter></NewsLetter>
             </div>
         </div>
     );
