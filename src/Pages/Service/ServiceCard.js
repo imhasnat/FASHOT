@@ -18,8 +18,8 @@ const ServiceCard = ({ service }) => {
                 <h2 className="card-title">{title}</h2>
                 <p>
                     {
-                        description.length > 150 ?
-                            <>{description.slice(0, 100) + '....'}<Link to={`/detailservice/${_id}`}>See more</Link></>
+                        description.length > 100 ?
+                            <>{description.slice(0, 100) + '....'}<Link to={`/detailservice/${_id}`} className="font-semibold text-primary">See more</Link></>
                             :
                             description
                     }
