@@ -20,22 +20,19 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                // loader: async () => fetch('http://localhost:5000/limitservices')
             },
             {
                 path: '/home',
                 element: <Home></Home>,
-                // loader: async () => fetch('http://localhost:5000/limitservices')
             },
             {
                 path: '/services',
                 element: <AllServices></AllServices>,
-                // loader: async () => fetch('http://localhost:5000/services')
             },
             {
                 path: '/detailservice/:id',
                 element: <DetailService></DetailService>,
-                loader: async ({ params }) => fetch(`http://localhost:5000/detailservice/${params.id}`)
+                loader: async ({ params }) => fetch(`https://service-review-server-tawny.vercel.app/detailservice/${params.id}`)
             },
             {
                 path: '/myreview',

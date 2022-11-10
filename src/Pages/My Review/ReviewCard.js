@@ -11,7 +11,7 @@ const ReviewCard = ({ review }) => {
     const [clickId, setClickId] = useState(0);
 
     const handleDelete = id => {
-        fetch(`http://localhost:5000/deletereview/${id}`, {
+        fetch(`https://service-review-server-tawny.vercel.app/deletereview/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
@@ -36,7 +36,7 @@ const ReviewCard = ({ review }) => {
         event.target.reset();
 
         if (updateComment) {
-            fetch(`http://localhost:5000/updatereview/${clickId}`, {
+            fetch(`https://service-review-server-tawny.vercel.app/updatereview/${clickId}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json'

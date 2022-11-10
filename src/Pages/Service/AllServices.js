@@ -1,44 +1,44 @@
-import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useState } from 'react';
 import useTitle from '../../Hook/useTitle';
-import ServiceCard from './ServiceCard';
+import ReactPaginate from 'react-paginate';
+import LoadAllService from './LoadAllService';
 
 const AllServices = () => {
-    // const services = useLoaderData();
-    const [services, setServices] = useState([]);
-    const [spinner, setSpinner] = useState(true);
+    const [count, setCount] = useState(0);
+    const [currentPage, setCurrentPage] = useState(0);
+    const [limit, setLimit] = useState(6);
+    let pageCount = Math.ceil(count / limit);
+
     useTitle('All Services');
 
-    useEffect(() => {
-        setSpinner(true);
-        fetch('http://localhost:5000/services')
-            .then(res => res.json())
-            .then(data => {
-                //console.log(data);
-                setServices(data);
-                setSpinner(false);
-            })
-            .catch(err => {
-                console.log(err.message);
-                setSpinner(false);
-            })
-    }, [])
 
-    if (spinner) {
-        return <progress className=" mx-auto flex my-48 justify-center progress progress-warning w-56"></progress>
+    const handlePageClick = (currentPage) => {
+        setCurrentPage(currentPage.selected);
     }
 
     return (
         <div className='my-20'>
-            <div className='sm:w-10/12 md:w-11/12 mx-auto grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center'>
-                {
-                    services.map(service =>
-                        <ServiceCard
-                            key={service._id}
-                            service={service}
-                        ></ServiceCard>)
-                }
-            </div>
+            <LoadAllService
+                count={count}
+                setCount={setCount}
+                limit={limit}
+                currentPage={currentPage}
+            ></LoadAllService>
+            <ReactPaginate
+                previousLabel={"previous"}
+                nextLabel={"next"}
+                breakLabel={"..."}
+                pageCount={pageCount}
+                marginPagesDisplayed={2}
+                pageRangeDisplayed={3}
+                onPageChange={handlePageClick}
+                containerClassName={"btn-group flex justify-center my-14"}
+                pageClassName={"btn"}
+                previousClassName={"btn"}
+                nextClassName={"btn"}
+                breakClassName={"btn"}
+                activeClassName={"btn-active"}
+            />
         </div>
     );
 };

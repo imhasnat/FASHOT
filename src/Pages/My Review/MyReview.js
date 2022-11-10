@@ -11,7 +11,7 @@ const MyReview = () => {
 
     useEffect(() => {
         setSpinner(true);
-        fetch(`http://localhost:5000/myreview?email=${user?.email}`, {
+        fetch(`https://service-review-server-tawny.vercel.app/myreview?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`
             }
@@ -41,13 +41,15 @@ const MyReview = () => {
             {
                 reviews.length > 0 ?
                     <>
-                        {
-                            reviews.map(review =>
-                                <ReviewCard
-                                    key={review._id}
-                                    review={review}
-                                ></ReviewCard>)
-                        }
+                        <div>
+                            {
+                                reviews.map(review =>
+                                    <ReviewCard
+                                        key={review._id}
+                                        review={review}
+                                    ></ReviewCard>)
+                            }
+                        </div>
                     </>
                     :
                     <>

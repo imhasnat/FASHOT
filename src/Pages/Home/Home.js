@@ -14,7 +14,7 @@ const Home = () => {
 
     useEffect(() => {
         setSpinner(true);
-        fetch('http://localhost:5000/limitservices')
+        fetch('https://service-review-server-tawny.vercel.app/limitservices')
             .then(res => res.json())
             .then(data => {
                 //console.log(data);

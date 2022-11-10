@@ -23,7 +23,7 @@ const ServiceReview = ({ id, title }) => {
             time
         }
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://service-review-server-tawny.vercel.app/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

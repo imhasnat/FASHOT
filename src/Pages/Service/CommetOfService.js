@@ -9,7 +9,7 @@ const CommetOfService = ({ id }) => {
 
     useEffect(() => {
         setSpinner(true);
-        fetch(`http://localhost:5000/review/${id}`)
+        fetch(`https://service-review-server-tawny.vercel.app/review/${id}`)
             .then(res => res.json())
             .then(data => {
                 setReviews(data);

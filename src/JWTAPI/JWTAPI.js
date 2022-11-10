@@ -1,5 +1,5 @@
 export function JWTAPI(currentUser) {
-    fetch('http://localhost:5000/jwt', {
+    fetch('https://service-review-server-tawny.vercel.app/jwt', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

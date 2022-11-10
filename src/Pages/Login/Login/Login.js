@@ -33,7 +33,7 @@ const Login = () => {
 
                 JWTAPI(currentUser);
                 //navigate(from, { replace: true });
-                // fetch('http://localhost:5000/jwt', {
+                // fetch('https://service-review-server-tawny.vercel.app/jwt', {
                 //     method: 'POST',
                 //     headers: {
                 //         'content-type': 'application/json'
