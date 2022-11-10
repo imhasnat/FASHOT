@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 import useTitle from '../../../Hook/useTitle';
 import regi from '../../../assests/regi.jpg';
+import { JWTAPI } from '../../../JWTAPI/JWTAPI';
 
 const Register = () => {
     const { createUser, updateUserInfo, setLoading, setUser } = useContext(AuthContext);
@@ -24,6 +25,9 @@ const Register = () => {
         createUser(email, password)
             .then(async result => {
                 const user = result.user;
+                const currentUser = {
+                    email: user.email
+                }
                 console.log(user);
                 setError('');
                 form.reset();
@@ -35,6 +39,7 @@ const Register = () => {
                 await updateUserInfo(profile)
                     .then(() => {
                         setUser(user);
+                        JWTAPI(currentUser);
                     })
                     .catch(error => {
                         setError(error.message);

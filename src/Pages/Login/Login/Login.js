@@ -5,6 +5,7 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 import useTitle from '../../../Hook/useTitle';
 import login from '../../../assests/login.jpg';
+import { JWTAPI } from '../../../JWTAPI/JWTAPI';
 
 const Login = () => {
     const { logIn, setLoading, setUser, popupLogin } = useContext(AuthContext);
@@ -21,7 +22,7 @@ const Login = () => {
         const password = form.password.value;
 
         logIn(email, password)
-            .then(result => {
+            .then(async result => {
                 const user = result.user;
                 const currentUser = {
                     email: user.email
@@ -29,19 +30,21 @@ const Login = () => {
                 setError('');
                 form.reset();
                 setUser(user);
-                fetch('http://localhost:5000/jwt', {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(currentUser)
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        localStorage.setItem('token', data.token);
-                        navigate(from, { replace: true });
-                    })
-                    .catch(err => console.log(err.message))
+
+                JWTAPI(currentUser);
+                //navigate(from, { replace: true });
+                // fetch('http://localhost:5000/jwt', {
+                //     method: 'POST',
+                //     headers: {
+                //         'content-type': 'application/json'
+                //     },
+                //     body: JSON.stringify(currentUser)
+                // })
+                //     .then(res => res.json())
+                //     .then(data => {
+                //         localStorage.setItem('token', data.token);
+                //     })
+                //     .catch(err => console.log(err.message))
             })
             .catch(error => {
                 setError(error.message);
@@ -58,9 +61,13 @@ const Login = () => {
         popupLogin(googleProvider)
             .then(result => {
                 const user = result.user;
+                const currentUser = {
+                    email: user.email
+                }
                 console.log(user);
                 setError('');
-                navigate(from, { replace: true });
+                JWTAPI(currentUser);
+                //navigate(from, { replace: true });
 
             })
             .catch(error => {
