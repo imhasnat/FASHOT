@@ -13,6 +13,7 @@ const Login = () => {
     const navigate = useNavigate();
     const from = location?.state?.from?.pathname || '/';
     useTitle('Login');
+
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
@@ -23,10 +24,26 @@ const Login = () => {
         logIn(email, password)
             .then(result => {
                 const user = result.user;
+                const currentUser = {
+                    email: user.email
+                }
                 setError('');
                 form.reset();
                 setUser(user);
-                navigate(from, { replace: true });
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        localStorage.setItem('token', data.token);
+                        navigate(from, { replace: true });
+                    })
+                    .catch(err => console.log(err.message))
             })
             .catch(error => {
                 setError(error.message);
@@ -63,7 +80,7 @@ const Login = () => {
                     <img src={login} alt="" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
                 </div>
                 <div className='flex justify-center items-center'>
-                    <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 border border-indigo-800 shadow-lg text-gray-900'>
+                    <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 border border-indigo-800 shadow-2xl text-gray-900'>
                         <div className='mb-2 text-center'>
                             <h1 className='my-3 text-4xl font-bold'>Sign in</h1>
                             <p className='text-sm text-gray-400'>

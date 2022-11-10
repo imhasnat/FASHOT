@@ -67,7 +67,7 @@ const Register = () => {
                     <img src={regi} alt="" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
                 </div>
                 <div className='flex justify-center items-center'>
-                    <div className='flex flex-col max-w-md p-6 rounded-md border border-indigo-800 shadow-lg  text-gray-900'>
+                    <div className='flex flex-col max-w-md p-6 rounded-md border border-indigo-800 shadow-2xl  text-gray-900'>
                         <div className='mb-8 text-center'>
                             <h1 className='my-3 text-4xl font-bold'>Register</h1>
                             <p className='text-sm text-gray-400'>Create a new account</p>

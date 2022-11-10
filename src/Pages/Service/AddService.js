@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import useTitle from '../../Hook/useTitle';
-
+import service from '../../assests/service.jpg';
 const AddService = () => {
     const navigate = useNavigate()
     useTitle('Add Services');
@@ -46,9 +46,14 @@ const AddService = () => {
     }
 
     return (
-        <div className="hero bg-base-200 py-16">
-            <div className="hero-content flex-col w-4/12">
-                <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100">
+        <div className="hero py-16">
+            <div className="hero-content flex-col md:flex-row-reverse">
+                <div className="text-center lg:text-left">
+                    <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+                        <img src={service} alt="" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
+                    </div>
+                </div>
+                <div className="card flex-shrink-0 w-full md:w-6/12 shadow-2xl bg-base-100">
                     <form onSubmit={handleSubmit} className="card-body">
                         <div className="form-control">
                             <label className="label">
